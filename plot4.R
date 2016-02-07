@@ -13,7 +13,7 @@ sm3<-as.numeric(paste(b[,9]))
 plot(d,sm1, type = "l", ylab = "Energy Sub Meeting", xlab = "")
 lines(d,sm2, type = "l", col="Red")
 lines(d,sm3, type = "l", col="Blue")
-legend("topright", c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3"), lty=1, lwd=2.5, col=c("black", "red", "blue"), bty="n",cex=0.8)
+legend("topright", c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3"), lty=1, lwd=2.5, col=c("black", "red", "blue"), bty="n",cex=0.9)
 
 e<-as.numeric(paste(b[,5]))
 f<-as.numeric(paste(b[,4]))
