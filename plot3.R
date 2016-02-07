@@ -1,0 +1,16 @@
+a<-read.table("household_power_consumption.txt", sep = ";",header = TRUE)
+library(dplyr)
+b<-filter(a, Date=="1/2/2007" | Date=="2/2/2007")
+c<-paste(b[,1],b[,2])
+d<-strptime(c,format = "%d/%m/%Y %H:%M:%S")
+sm1<-as.numeric(paste(b[,7]))
+sm2<-as.numeric(paste(b[,8]))
+sm3<-as.numeric(paste(b[,9]))
+png("plot3.png", width=480, height=480)
+
+plot(d,sm1, type = "l", ylab = "Energy Sub Meeting", xlab = "")
+lines(d,sm2, type = "l", col="Red")
+lines(d,sm3, type = "l", col="Blue")
+legend("topright", c(c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3")),lty = 1, col = c("Black","Red","Blue"))
+
+dev.off()
